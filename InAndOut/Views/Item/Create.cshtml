@@ -1,0 +1,52 @@
+﻿@model InAndOut.Models.Item
+
+
+
+<div class="pt-5">
+    <h2> Create New Item</h2>
+
+
+</div>
+<form method="post" asp-action="Create">
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Brower"></label>
+                    <input asp-for="Brower" class="form-control" />
+                    <span asp-validation-for="Brower" class="text-danger"></span>
+                </div>
+                <div class="col-4">
+                    <label asp-for="Lender"></label>
+                    <input asp-for="Lender" class="form-control" />
+                    <span asp-validation-for="Lender" class="text-danger"></span>
+                </div>
+
+                <div class="col-4">
+                    <label asp-for="ItemName"></label>
+                    <input asp-for="ItemName" class="form-control" />
+                    <span asp-validation-for="ItemName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-2">
+                    <input type="submit" class="btn btn-info w-100" value="Create" />
+                </div>
+                <div class="col-2 ml-lg-auto">
+                    <a asp-action="Index" class="btn btn-dark w-100">Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<div>
+    <a asp-action="Index"><-- Back to List</a>
+</div>
+
+
+@section Scripts{
+
+    @{<partial name="_ValidationScriptsPartial" />}
+
+}
+

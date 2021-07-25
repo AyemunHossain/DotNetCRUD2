@@ -1,0 +1,44 @@
+﻿@model InAndOut.Models.Expense
+
+<div class="pt-5">
+    <h2>Delete This Item</h2>
+
+
+</div>
+<form method="post" asp-action="DeleteItem">
+    <input asp-for="Id" hidden />
+    <div class="row">
+        <div class="col-12">
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="ExpenseName"></label>
+                    <input asp-for="ExpenseName" disabled class="form-control" />
+                </div>
+                <div class="col-4">
+                    <label asp-for="Amount"></label>
+                    <input asp-for="Amount" disabled class="form-control" />
+
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-2">
+                    <input type="submit" class="btn btn-danger w-100" value="Delete" />
+                </div>
+                <div class="col-2">
+                    <a asp-action="Index" class="btn btn-primary w-100">Discard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<div>
+    <a asp-action="Index"> < Back to List</a>
+</div>
+
+
+@section Scripts{
+
+    @{<partial name="_ValidationScriptsPartial" />}
+
+}
+
